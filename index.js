@@ -12,13 +12,8 @@ const isValidUnixTimestamp = (input) => {
 };
 
 const isValidDateString = (input) => {
-  const datePattern = /^\d{4}-\d{2}-\d{2}$/;
-  if ( !datePattern.test(input) ) {
-    return false;
-  }
-
   const date = new Date(input);
-  return !isNaN(date.getTime()) && input === date.toISOString().split('T')[0];
+  return !isNaN(date.getTime());
 };
 
 // enable CORS (https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
